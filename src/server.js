@@ -3,10 +3,12 @@ import cors from 'cors';
 
 import { api_port } from './config';
 import mountRoutes from './routes';
+import { connectDB } from './config/db';
 
 const app = express();
 
 app.use(cors());
+app.use(express.json({ extended: false }));
 
 mountRoutes(app);
 
@@ -19,6 +21,7 @@ app.use((req, res) => {
 });
 
 app.listen(api_port, () => {
+  connectDB();
   console.log(
     `Sever started on port ${api_port} -> http://localhost:${api_port}`
   );

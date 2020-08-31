@@ -47,7 +47,7 @@ git commit
 git push -u origin new-feature
 ```
 
-- Delete Local Branches Safely 
+- Delete Local Branches Safely
 
 ```shell
 git branch -d localBranchName
@@ -74,4 +74,5 @@ git fetch -p
 - [express](https://www.npmjs.com/package/express)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [cors](https://www.npmjs.com/package/cors)
+- [mongoose](https://www.npmjs.com/package/mongoose)
   
