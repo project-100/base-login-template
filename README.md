@@ -4,7 +4,7 @@
 
 ## Owners
 
-- [Aravinth](https://github.com/aravinthraj98)
+- [Aravinth Raj](https://github.com/aravinthraj98)
 - [Mugilan](https://github.com/Mugilan-Codes)
 
 ### How to Colaborate
