@@ -1,0 +1,27 @@
+{
+  "name": "base-login-template",
+  "version": "1.0.0",
+  "description": "Basic Backend Authentication Template",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project-100/base-login-template.git"
+  },
+  "author": "Mugilan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/project-100/base-login-template/issues"
+  },
+  "homepage": "https://github.com/project-100/base-login-template#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "nodemon": "^2.0.4"
+  }
+}
