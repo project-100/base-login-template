@@ -46,6 +46,18 @@ git commit
 ```shell
 git push -u origin new-feature
 ```
+
+- Delete Local Branches Safely 
+
+```shell
+git branch -d localBranchName
+```
+
+- Sync with the remote branches by pruning deleted remote branches
+
+```shell
+git fetch -p
+```
   
 ### Packages Used
 
