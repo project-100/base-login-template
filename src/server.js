@@ -2,18 +2,17 @@ import express from 'express';
 import cors from 'cors';
 
 import { api_port } from './config';
-import authroute from './routes/api/auth';
-import userroute from './routes/api/user'
+import mountRoutes from './routes';
 
 const app = express();
 
 app.use(cors());
 
+mountRoutes(app);
+
 app.get('/', (req, res) => {
   res.send('API Running...');
 });
-app.use('/auth',authroute);
-app.use('/user',userroute);
 
 app.use((req, res) => {
   res.status(404).send('404 Not Found');
