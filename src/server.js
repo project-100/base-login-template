@@ -1,8 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 
 import { api_port } from './config';
 
 const app = express();
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('API Running...');
