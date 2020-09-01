@@ -1,12 +1,11 @@
-import Joi from 'joi';
-
-const validation = (schema, property) => {
+const validation = (schema, property = 'body') => {
   return (req, res, next) => {
-    const { error } = Joi.validate(req.body, schema);
+    const { error, value } = schema.validate(req[property]);
 
     const isValid = error == null;
 
     if (isValid) {
+      console.log({ value });
       next();
     } else {
       const { details } = error;

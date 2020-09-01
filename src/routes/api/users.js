@@ -1,5 +1,8 @@
 import express from 'express';
 
+import { SchemaValidation } from '../../middleware';
+import { Schemas } from '../../utils';
+
 const router = express.Router();
 
 /*
@@ -7,7 +10,7 @@ const router = express.Router();
  * @desc    Test Route
  * @access  Public
  */
-router.get('/', (req, res) => {
+router.post('/', SchemaValidation(Schemas.createUser), (req, res) => {
   res.end('Users Test Route');
 });
 
