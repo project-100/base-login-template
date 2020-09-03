@@ -1,6 +1,7 @@
 const validation = (schema, property = 'body') => {
   return (req, res, next) => {
     const { error, value } = schema.validate(req[property]);
+    console.log(req.body);
 
     const isValid = error == null;
 
