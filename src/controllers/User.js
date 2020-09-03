@@ -9,9 +9,7 @@ const registerUser = async (req, res) => {
     if (user.err_msg)
       return res.status(409).json({ errors: { msg: user.err_msg } });
 
-    console.log(user);
-
-    res.json({ user });
+    res.json({ token: user });
   } catch (err) {
     console.log('registerUser -> Controller');
     console.error(err.message);

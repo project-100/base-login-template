@@ -1,4 +1,5 @@
 import { User } from '../database';
+import { generateAccessToken } from '../utils';
 
 const createUser = async ({ name, email, password, username }) => {
   try {
@@ -8,6 +9,8 @@ const createUser = async ({ name, email, password, username }) => {
     }
 
     user = new User({ name, email, password, username });
+
+    // Encrypt Password
 
     await user.save();
 
@@ -19,7 +22,9 @@ const createUser = async ({ name, email, password, username }) => {
       },
     };
 
-    return payload;
+    const token = generateAccessToken(payload);
+
+    return token;
   } catch (err) {
     console.log('createUser -> Service');
     console.error(err.message);
