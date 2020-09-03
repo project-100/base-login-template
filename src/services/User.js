@@ -11,10 +11,15 @@ const createUser = async ({ name, email, password, username }) => {
 
     await user.save();
 
-    console.log({ user });
-    console.log('User Created');
+    console.log('User Created', user);
 
-    return 'User Created';
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
+
+    return payload;
   } catch (err) {
     console.log('createUser -> Service');
     console.error(err.message);
