@@ -1,4 +1,4 @@
-import { createUser } from '../services/users';
+import { createUser, fetchAllUsers } from '../services/users';
 
 /*
  * @route   POST /api/users/
@@ -28,4 +28,21 @@ const registerUser = async (req, res) => {
   }
 };
 
-export { registerUser };
+/*
+ * @route   GET /api/users/
+ * @desc    Get All Users
+ * @access  Public
+ */
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await fetchAllUsers();
+
+    res.json(users);
+  } catch (err) {
+    console.log('getAllUsers -> Controller');
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+export { registerUser, getAllUsers };

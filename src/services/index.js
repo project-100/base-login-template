@@ -1,3 +1,3 @@
-import { createUser } from './User';
+import { createUser, fetchAllUsers } from './users';
 
-export { createUser };
+export { createUser, fetchAllUsers };

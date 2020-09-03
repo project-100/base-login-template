@@ -30,4 +30,14 @@ const createUser = async ({ name, email, password, username }) => {
   }
 };
 
-export { createUser };
+const fetchAllUsers = async () => {
+  try {
+    return await User.find();
+  } catch (err) {
+    console.log('fetchAllUsers -> Service');
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+export { createUser, fetchAllUsers };
