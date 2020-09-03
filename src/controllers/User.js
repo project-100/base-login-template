@@ -1,23 +1,20 @@
-import {registeruser} from "../services/index"
-const getregisterrequest = async(req,res)=>{
-const {name,email,password,confirmPassword,username}=req.body;
+import { createUser } from '../services/User';
 
-try{
-    const user = await registeruser({name,email,password,username});
-    if(user.error)     
-         return res.status(409).json({ errors: { msg: user.error } });
-    res.end("register success");
+const registerUser = async (req, res) => {
+  const { name, email, password, username } = req.body;
 
-}
-catch(err){
-    console.log("controllers");
-    return res.end(err);
+  try {
+    const user = await createUser({ name, email, password, username });
 
-}
-   
+    if (user.err_msg)
+      return res.status(409).json({ errors: { msg: user.err_msg } });
 
+    res.send('User Registered');
+  } catch (err) {
+    console.log('registerUser -> Controller');
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
 
-
-}
-
-export { getregisterrequest };
+export { registerUser };

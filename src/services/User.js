@@ -1,18 +1,25 @@
-import { User } from '../database/index'
+import { User } from '../database';
 
-const registeruser = async ({name,email,password,username})=>{
-    console.log(name+"hhh");
-    try{
-        let user = await User.findOne({email});
-        if(user)
-            return {error:"email id already exists"};
-        let createuser = {name,email,password,username};
-        return await User.create(createuser);
-
+const createUser = async ({ name, email, password, username }) => {
+  try {
+    let user = await User.findOne({ email });
+    if (user) {
+      return { err_msg: 'User Exists!' };
     }
-    catch(err){
-        return {error:err+""};
-    }
-}
 
-export {registeruser}
+    user = new User({ name, email, password, username });
+
+    await user.save();
+
+    console.log({ user });
+    console.log('User Created');
+
+    return 'User Created';
+  } catch (err) {
+    console.log('createUser -> Service');
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+export { createUser };

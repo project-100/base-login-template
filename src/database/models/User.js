@@ -4,7 +4,4 @@ import UserSchema from '../schemas/User';
 
 const User = mongoose.model('user', UserSchema);
 
-export {User};
-
-
-
+export default User;

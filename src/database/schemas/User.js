@@ -1,4 +1,5 @@
 import { Schema } from 'mongoose';
+import { date } from 'joi';
 
 const UserSchema = new Schema({
   name: {
@@ -21,6 +22,14 @@ const UserSchema = new Schema({
     type: String,
     min: 5,
     max: 30,
+  },
+  created_on: {
+    type: Date,
+    default: Date.now,
+  },
+  updated_on: {
+    type: Date,
+    default: Date.now,
   },
 });
 
