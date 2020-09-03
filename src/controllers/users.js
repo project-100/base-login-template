@@ -1,5 +1,16 @@
-import { createUser } from '../services/User';
+import { createUser } from '../services/users';
 
+/*
+ * @route   POST /api/users/
+ * @desc    Register User
+ * @access  Public
+ *
+ * @param   {string}  name
+ * @param   {string}  email
+ * @param   {string}  password
+ * @param   {string}  confirmPassword
+ * @param   {string}  [username=null]
+ */
 const registerUser = async (req, res) => {
   const { name, email, password, username } = req.body;
 

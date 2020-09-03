@@ -22,9 +22,7 @@ const createUser = async ({ name, email, password, username }) => {
       },
     };
 
-    const token = generateAccessToken(payload);
-
-    return token;
+    return generateAccessToken(payload);
   } catch (err) {
     console.log('createUser -> Service');
     console.error(err.message);

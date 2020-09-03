@@ -6,11 +6,6 @@ import { registerUser } from '../../controllers';
 
 const router = express.Router();
 
-/*
- * @route   POST /api/users/
- * @desc    Register User
- * @access  Public
- */
-router.post('/', SchemaValidation(Schemas.createUser), registerUser);
+router.post('/', SchemaValidation(Schemas.createUser), registerUser).get('/');
 
 export default router;
