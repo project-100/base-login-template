@@ -1,5 +1,4 @@
 import { Schema } from 'mongoose';
-import { date } from 'joi';
 
 const UserSchema = new Schema({
   name: {
