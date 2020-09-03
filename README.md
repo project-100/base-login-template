@@ -75,4 +75,5 @@ git fetch -p
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [cors](https://www.npmjs.com/package/cors)
 - [mongoose](https://www.npmjs.com/package/mongoose)
-  
+- [joi](https://www.npmjs.com/package/joi)
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)

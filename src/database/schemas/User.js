@@ -22,6 +22,14 @@ const UserSchema = new Schema({
     min: 5,
     max: 30,
   },
+  created_on: {
+    type: Date,
+    default: Date.now,
+  },
+  updated_on: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 export default UserSchema;

@@ -1,3 +1,3 @@
-import {getregisterrequest} from './User';
+import { registerUser, getAllUsers } from './users';
 
- export { getregisterrequest };
+export { registerUser, getAllUsers };
