@@ -4,9 +4,13 @@ import cors from 'cors';
 import { api_port } from './config';
 import mountRoutes from './routes';
 import { connectDB } from './config/db';
+import passport from 'passport';
+const passportsetup=require('./config/passport-setup');
+
 
 const app = express();
-
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cors());
 app.use(express.json({ extended: false }));
 
